@@ -24,9 +24,9 @@ NPC buffer gossip script for WotLK of the Lich King Classic (3.3.5a). Players sp
 | shadow_resist | **player** | Shadow Protection — cast by player |
 | wild | **player** | Mark of the Wild / Gift of the Wild — cast by player |
 | might | **190010** | Blessing of Might — separate might buffer NPC |
-| wisdom | **601015** | Blessing of Wisdom — wisdom caster NPC |
+| wisdom | **{NEARBY_NPC}** | Blessing of Wisdom — wisdom caster NPC |
 | kings | **player** | Blessing of Kings — always cast by player |
-| sanctuary | **601017** | Blessing of Sanctuary — buffer NPC casts |
+| sanctuary | **{NEARBY_NPC}** | Blessing of Sanctuary — buffer NPC casts |
 | thorns | **player** | Thorns — cast by player |
 
 All non-listed families default to `"player"` in `BLESSING_CASTERS`. Players cast prayer buffs (Prayer of Fortitude, Arcane Brilliance, Gift of the Wild, etc.) themselves so the AoE centers on them — NPC-cast party buffs only reach the NPC's empty party.
@@ -76,7 +76,7 @@ A target cannot receive a buff whose `spellLevel` > target level + 10 (verified 
 1. Copy `npc_buffer.lua` and `buffs_data.lua` to your worldserver's `lua_scripts/` directory
 2. Ensure the script is loaded by your Eluna/AzerothCore worldserver config
 3. Run `grant_buff_talents.sql` against your world database (adjust `SET @BUFFER_NPC`, `@MIGHT_NPC`, `@WISDOM_NPC` as needed)
-4. Set creature template entry to `601017` for the buffer NPC, `190010` for the might buffer, `601015` for the wisdom caster
+4. Set creature template entry to `601017` for the buffer NPC, `{NEARBY_NPC}` for the might buffer, `{NEARBY_NPC}` for the wisdom caster
 5. Reload or restart the worldserver
 
 ---
