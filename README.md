@@ -10,7 +10,7 @@ NPC buffer gossip script for WotLK of the Lich King Classic (3.3.5a). Players sp
 |---|---|
 | `npc_buffer.lua` | Main Eluna gossip script — buff menu, caster resolution, spell application |
 | `buffs_data.lua` | Buff spell data — `{ spellId, spellLevel }` per entry, all verified against Spell.dbc |
-| `grant_buff_talents.sql` | SQL for caster NPCs via `npc_trainer` |
+| `npc_buffer.sql` | SQL for caster NPCs via `npc_trainer` |
 
 ---
 
